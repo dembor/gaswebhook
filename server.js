@@ -6,9 +6,10 @@ const PAGE_TOKEN = process.env.PAGE_TOKEN;
 const USER_ID = process.env.USER_ID;
 app.post("/gas-alert", async (req, res) => {
   const { mq5, mq6, message } = req.body;
-  const text = `GAS LEAK DETECTED!
-MQ5: ${mq5}
-MQ6: ${mq6}
+  const text = `Gas leakage detected! Please take precaution when handling the leakage.
+Once confirmed, we recommended contacting the Bureau of Fire Protection (BFP) via this number: 09128137795
+MQ-5 reading: ${mq5}
+MQ-6 reading: ${mq6}
 ${message}`;
   try {
     await axios.post(
